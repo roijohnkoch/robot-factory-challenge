@@ -1,0 +1,59 @@
+.robot-component_container {
+  @mixin common-button_style {
+    width: 100%;
+    padding: 12px 0;
+    cursor: pointer;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: none;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  width: 300px;
+  margin: auto;
+
+  .robot-component_details_wrapper {
+    border: 1px solid black;
+    .robot_name {
+      text-align: center;
+      border-bottom: 1px solid black;
+      padding: 12px 0;
+    }
+    
+    .robot_details {
+      margin: 12px;
+      height: auto;
+      
+      .robot_details_configuration_container {
+        .robot_details_configurations {
+          margin: 0 12px;
+        }
+      }
+    }
+  }
+
+  .robot-component_buttons_wrapper {
+    margin-bottom: 24px;
+    display: flex;
+
+    .robot-component_buttons {
+      &--extinguish {
+        @include common-button_style;
+        background-color: red;
+      }
+
+      &--add_shipment {
+        @include common-button_style;
+        background-color: #EEEEEE;
+        color: black;
+      }
+
+      &--remove_shipment {
+        @include common-button_style;
+        background-color: black;
+      }
+    }
+  }
+}

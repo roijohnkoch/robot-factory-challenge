@@ -1,0 +1,21 @@
+.robot-list-component-container {
+  flex-basis: 25%;
+
+  .robot-list-component-container_title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+    align-items: center;
+    height: 36px;
+
+    .robot-list-component-container_button {
+      border: 1px solid black;
+      background-color: #07adf8;
+      color: white;
+      border-radius: 4px;
+      margin-left: 12px;
+      cursor: pointer;
+      padding: 6px;
+    }
+  }
+}

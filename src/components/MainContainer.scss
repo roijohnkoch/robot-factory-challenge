@@ -1,0 +1,31 @@
+.main-container {
+  width: 100%;
+
+  .main-container_title {
+    text-align: center;
+  }
+
+  .main-container_robot-list-container {
+    margin: 24px;
+
+    .main-container_robot-list-wrapper {
+      display: flex;
+    }
+
+    .main-contianer_robot-button-wrapper {
+      display: flex;
+      justify-content: center;
+      .recycle_button {
+        border: 1px solid black;
+        color: white;
+        background-color: #4CAF50;
+        width: 300px;
+        padding: 12px 0;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+

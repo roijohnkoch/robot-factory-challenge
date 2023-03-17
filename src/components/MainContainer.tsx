@@ -50,7 +50,6 @@ const MainContainer: React.FC<{ robotsReducer: IReduxState }> = ({ robotsReducer
   const onClickForShipment = (robotId: number, readyToShip: boolean) => {
     const robotIndex = newRobotList.findIndex((robot) => robot.id === robotId);
     newRobotList[robotIndex].readyToShip = readyToShip;
-    console.log(newRobotList);
     dispatch(actionReadyToShip(newRobotList));
   }
 

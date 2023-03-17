@@ -8,7 +8,7 @@ You can perform actions such as Extinguish, Add to shipment, Remove from Shipmen
 
 ## Scripts
 
-Once done cloning the project. Run the following scripts to perform specific specific task:
+Once done cloning the project. Checkout `master` branch. Run the following scripts to perform specific specific task:
 
 ### `npm install`
 

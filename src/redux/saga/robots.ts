@@ -1,6 +1,7 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery, select } from 'redux-saga/effects';
 import { getRobotsApi, postExtinguishApi, postRecycleApi, putSendShipmentApi } from '../api';
 import * as constants from '../types';
+import { robotsSelector } from '../selectors';
 
 function* getRobots() {
   try {
@@ -14,8 +15,13 @@ function* getRobots() {
 
 function* postExtinguish(action: any) {
   try {
-    yield call(postExtinguishApi, action.payload);
-    yield put({ type: constants.POST_EXTINGUISH_SUCCESS })
+    const robots: ReturnType<typeof robotsSelector> = yield select(robotsSelector);
+    const response: ReturnType<typeof postExtinguishApi> = yield call(postExtinguishApi, action.payload);
+    const { data }: any = response;
+    const robotList = robots.map((robot) => robot);
+    const indexOfSelected = robotList.findIndex((robot) => robot.id === data.id);
+    robotList[indexOfSelected] = { ...data };
+    yield put({ type: constants.POST_EXTINGUISH_SUCCESS, payload: robotList });
   } catch (error) {
     yield put({ type: constants.POST_EXTINGUISH_FAILED, payload: error })
   }
@@ -32,10 +38,8 @@ function* postRecycle(action: any) {
 
 function* putSendShipment(action: any) {
   try {
-    console.log('action ====>', action);
     const response: ReturnType<typeof putSendShipmentApi> = yield call(putSendShipmentApi, action.payload);
     const { data }: any = response;
-    console.log('put send ===>', data);
     yield put({ type: constants.PUT_SEND_SHIPMENT_SUCCESS, payload: data })
   } catch (error) {
     yield put({ type: constants.PUT_SEND_SHIPMENT_FAILED, payload: error })

@@ -26,3 +26,7 @@ export interface IReduxState {
   loading: boolean,
   error: Error | null
 }
+
+export interface IReducers {
+  robotsReducer: IReduxState
+}

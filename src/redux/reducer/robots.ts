@@ -35,6 +35,7 @@ export default function robotsReducer(state = initialState, action: any) {
       return {
         ...state,
         loading: false,
+        robots: action.payload,
       };
     case types.POST_EXTINGUISH_FAILED:
       return {

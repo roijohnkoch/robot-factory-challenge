@@ -22,7 +22,11 @@ module.exports = {
       'ts',
       'tsx',
       'jsx',
-      'node'
+      'node',
+      'scss',
   ],
+  moduleNameMapper: {
+    "^.+\\.(css|less|scss)$": "identity-obj-proxy"
+  },
   resetMocks: true
 }

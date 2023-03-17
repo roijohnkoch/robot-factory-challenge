@@ -1,19 +1,16 @@
 import React from 'react';
-import { IRobot, IReduxState } from './types';
-import { connect } from 'react-redux';
+import { IRobot } from './types';
 import { useDispatch } from 'react-redux';
-import { postExtinguish, actionReadyToShip } from '../redux/actions';
-import './RobotComponent.scss'
+import { postExtinguish } from '../redux/actions';
+import './RobotComponent.scss';
 
 interface IRobotComponent {
   robot: IRobot,
-  robotsReducer: IReduxState,
   onClickForShipment?: (robotId: number, readyToShip: boolean) => void;
 }
 
 const RobotComponent: React.FC<IRobotComponent> = ({
   robot,
-  robotsReducer,
   onClickForShipment = () => {},
 }) => {
   const {
@@ -26,7 +23,6 @@ const RobotComponent: React.FC<IRobotComponent> = ({
     readyToShip,
   } = robot;
   const dispatch = useDispatch();
-  const { robots } = robotsReducer;
   const renderConfigurations = (configuration: string, value: boolean | string | number) => {
     switch (configuration) {
       case 'hasSentience':
@@ -71,10 +67,10 @@ const RobotComponent: React.FC<IRobotComponent> = ({
             })}
           </div>
           {statuses.length !== 0 && (
-            <div>
+            <div className='robot_details_statuses_container'>
               Status:
               {statuses.map((robotStatus, index) => {
-                return <div key={index} className='robot_details_configurations'>{robotStatus}</div>
+                return <div key={index} className='robot_details_statuses'>{robotStatus}</div>
               })}
             </div>
           )}
@@ -95,10 +91,4 @@ const RobotComponent: React.FC<IRobotComponent> = ({
   );
 }
 
-const mapStateToProps = (state: any) => {
-  return {
-    robotsReducer: state.robotsReducer
-  }
-}
-
-export default connect(mapStateToProps)(RobotComponent);
+export default RobotComponent;

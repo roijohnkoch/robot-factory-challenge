@@ -44,7 +44,6 @@ const MainContainer: React.FC<{ robotsReducer: IReduxState }> = ({ robotsReducer
   const readyToShipRobots = newRobotList.filter((robot) => robot.readyToShip);
 
   const onClickRecycleButton = () => {
-    alert(`Recycle robots with id/s: ${forRecycleRobots}`);
     dispatch(postRecycle(forRecycleRobots));
   }
 

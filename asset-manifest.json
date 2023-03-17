@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/robot-factory-challenge/static/css/main.f9733d0b.css",
+    "main.js": "/robot-factory-challenge/static/js/main.c9f2c266.js",
+    "static/js/787.122afc0f.chunk.js": "/robot-factory-challenge/static/js/787.122afc0f.chunk.js",
+    "index.html": "/robot-factory-challenge/index.html",
+    "main.f9733d0b.css.map": "/robot-factory-challenge/static/css/main.f9733d0b.css.map",
+    "main.c9f2c266.js.map": "/robot-factory-challenge/static/js/main.c9f2c266.js.map",
+    "787.122afc0f.chunk.js.map": "/robot-factory-challenge/static/js/787.122afc0f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9733d0b.css",
+    "static/js/main.c9f2c266.js"
+  ]
+}

@@ -29,6 +29,7 @@ Launches the test runner in the interactive watch mode for specific file.
 ### `npm run deploy`
 
 Script for deploying the application in [GitHub Pages](https://pages.github.com/).
+Access the deployed application [here](https://roijohnkoch.github.io/robot-factory-challenge);
 
 ## Other tools/libraries used
 
